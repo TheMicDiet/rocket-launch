@@ -1,4 +1,6 @@
 # rocket-launch
+### Live version
+[Live version](http://mi-dietrich/launches/).
 
 ## Project setup
 ```
@@ -25,5 +27,4 @@ npm run test
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
