@@ -1,7 +1,7 @@
 # Rocket Launches
-## Simple Vue.js App that shows upcoming launches
+Simple Vue.js App that shows upcoming launches
 
-[Live version](http://mi-dietrich/launches/).
+[Live version](http://mi-dietrich/launches/)
 
 ## Project setup
 ```
