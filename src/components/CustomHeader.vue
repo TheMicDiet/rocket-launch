@@ -35,4 +35,11 @@ a:hover {
   color: rgb(234, 234, 234);
 
 }
+.navbar { 
+  padding-top: 0.25rem; 
+  padding-bottom: 0.25rem;
+  background: linear-gradient(to right, rgba(3,83,158,1) 0%, rgba(32,124,229,1) 100%);
+
+}
+
 </style>

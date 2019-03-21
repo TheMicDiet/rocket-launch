@@ -112,4 +112,9 @@ export default {
 .streamUrl:hover {
   color: rgb(63, 63, 236);
 }
+.launch {
+  border-image: linear-gradient(to right, rgba(3,83,158,0.5) 0%, rgba(32,124,229,0.5) 100%);
+  border-image-slice: 1;
+  border-width: 1px;
+}
 </style>

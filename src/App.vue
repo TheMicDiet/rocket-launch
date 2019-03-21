@@ -56,9 +56,9 @@ export default {
 </script>
 
 <style lang="scss">
-  $dark: #2E5077;
-  $light: #F9F9FA;
-  $body-bg: #F9FAF9;
+  $dark: rgba(3,83,158,1);
+  $light: #FFFFFF;
+  $body-bg: #FFFFFF;
 
   @import "~bootstrap/scss/bootstrap";  // import complete bootstrap.scss source from node_modules using ~ alias
   @import url('https://fonts.googleapis.com/css?family=Oxygen');
@@ -79,7 +79,9 @@ export default {
     width: 100%;
     height: 60px; /* Set the fixed height of the footer here */
     line-height: 60px; /* Vertically center the text there */
-    background-color: #f5f5f5;
+    background: rgba(3,83,158,1);
+    //background-image: linear-gradient(to left, #0575e6, #0b5eca, #0b47af, #083194, #021b79);
+    background: linear-gradient(to right, rgba(3,83,158,1) 0%, rgba(32,124,229,1) 100%);
   }
   .footer a {
     color: $light;
@@ -95,5 +97,6 @@ export default {
     
     color: rgb(63, 63, 236);
   }
+  
 
 </style>
