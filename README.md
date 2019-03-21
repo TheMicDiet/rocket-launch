@@ -1,4 +1,6 @@
-# rocket-launch
+# Rocket Launches
+Simple Vue.js App that shows upcoming launches.
+[Live version](http://mi-dietrich.de/launches/)
 
 ## Project setup
 ```
@@ -25,5 +27,4 @@ npm run test
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
