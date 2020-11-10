@@ -12,7 +12,7 @@
         <font-awesome-icon icon="map-marker-alt"/>
         {{info.location}}
       </a>
-      <a class="text-right">{{info.net}}</a>
+      <a class="text-right">{{netFormatted}}</a>
     </div>
 
     <div v-if="show" class="description">
@@ -24,7 +24,7 @@
           </tr>
           <tr v-if="info.windowStart">
             <th>Launch Window</th>
-            <td>{{info.windowStart}} - {{info.windowEnd}}</td>
+            <td>{{windowStartFormatted}} - {{windowEndFormatted}}</td>
           </tr>
           <tr v-if="info.agency">
             <th>Agency</th>
@@ -33,7 +33,7 @@
           <tr v-if="info.vidurls[0]">
             <th>Stream</th>
             <td>
-              <a class="streamUrl" :href="info.vidurls[0]" target="_blank">{{info.vidurls[0]}}</a>
+              <a class="streamUrl" :href="info.vidurls[0]" target="_blank">{{info.vidurls[0].url}}</a>
             </td>
           </tr>
         </table>
@@ -43,6 +43,7 @@
 </template>
 
 <script>
+import moment from 'moment'
 export default {
   name: "Launch",
   props: {
@@ -56,7 +57,7 @@ export default {
     };
   },
   mounted() {
-    if (Number(this.info.netstamp) <= 0) {
+    if (this.info.status === "TBD") {
       this.countdown = "TBD";
     } else {
       this.ticker = setInterval(this.updateCountDown, 1000);
@@ -65,10 +66,22 @@ export default {
   destroyed() {
     clearInterval(this.ticker);
   },
+  computed: {
+    netFormatted: function(){
+      return this.dateFormatted(this.info.net);
+    },
+    windowStartFormatted: function() {
+      return this.dateFormatted(this.info.windowStart);
+    },
+    windowEndFormatted: function() {
+      return this.dateFormatted(this.info.windowEnd);
+    }
+  
+  },
   methods: {
     updateCountDown: function() {
-      let timeDiffSeconds =
-        Number(this.info.netstamp) - Math.floor(Date.now() / 1000);
+      const netstamp = Date.parse(this.info.net);
+      let timeDiffSeconds = Math.floor((netstamp - Date.now()) / 1000);
       if (timeDiffSeconds < 0) {
         this.countdown = "LIFT-OFF!";
       } else {
@@ -87,6 +100,9 @@ export default {
     },
     toggleShow: function() {
       this.show = !this.show;
+    },
+    dateFormatted(date) {
+      return moment(date).format("DD.MM.yyyy HH:mm:ss")
     }
   }
 };

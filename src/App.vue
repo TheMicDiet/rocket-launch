@@ -11,7 +11,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <p>Powered by Vue.js and Bootstrap. Data from <a id="ref" href="https://launchlibrary.net">Launch Library</a>.</p>
+            <p>Powered by Vue.js and Bootstrap. Data from <a id="ref" href="https://thespacedevs.com/">Launch Library 2</a>.</p>
             
           </div>
           <div class="modal-footer">
@@ -24,7 +24,7 @@
       <launch-list></launch-list>
     </div>
     <div v-bind:class="{'fixed-bottom': errorOccured}" class="footer text-light bg-dark">
-      <a href="http://mi-dietrich.de">&copy;2019 by Michael Dietrich</a>
+      <a href="http://mi-dietrich.de">&copy;2020 by Michael Dietrich</a>
     </div>
   </div>
 </template>
