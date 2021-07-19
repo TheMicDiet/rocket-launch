@@ -33,7 +33,7 @@
           <tr v-if="info.vidurls[0]">
             <th>Stream</th>
             <td>
-              <a class="streamUrl" :href="info.vidurls[0]" target="_blank">{{info.vidurls[0].url}}</a>
+              <a class="streamUrl" :href="info.vidurls[0].url" target="_blank">{{info.vidurls[0].url}}</a>
             </td>
           </tr>
         </table>
